@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11905,19 +11905,19 @@ Name: MEDV, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11944,9 +11944,86 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RM</th>
+      <th>LSTAT</th>
+      <th>PTRATIO</th>
+      <th>MEDV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.575</td>
+      <td>4.98</td>
+      <td>15.3</td>
+      <td>504000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.421</td>
+      <td>9.14</td>
+      <td>17.8</td>
+      <td>453600.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.185</td>
+      <td>4.03</td>
+      <td>17.8</td>
+      <td>728700.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6.998</td>
+      <td>2.94</td>
+      <td>18.7</td>
+      <td>701400.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.147</td>
+      <td>5.33</td>
+      <td>18.7</td>
+      <td>760200.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -11977,9 +12054,12 @@ Standard deviation of prices: $165,340.28
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li>A 1 unit increase in 'RM' is associated with an increase value of 'MEDV'</li>
-<li>A 1 unit increase in 'LSTAT' is associated with an increase value of 'MEDV'</li>
-<li>A 1 unit increase in 'PTRATIO' is associated with an increase value of 'MEDV'</li>
+<li><p>A 1 unit increase in 'RM' is associated with an increase value of 'MEDV'. In my opinion the same area, but if the number of rooms of the house increased, will lead to the price of building the house will be higher due to the need to buy more materials to build more rooms.</p>
+</li>
+<li><p>A 1 unit increase in 'LSTAT' is associated with an decrease value of 'MEDV'.  I think that high class people will choose their neighbors with their own class to make relationships and communicate easily with each other.</p>
+</li>
+<li><p>A 1 unit increase in 'PTRATIO' isn't associated with an decrease or increase value of 'MEDV'. In this matter, I feel the value of the house has nothing to do with it. It only depends on 2 issues (RM vs. LSTAT)</p>
+</li>
 </ul>
 
 </div>
@@ -12113,7 +12193,8 @@ Standard deviation of prices: $165,340.28
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 
-<pre><code>    Model has a coefficient of determination, R^2, of 0.923.</code></pre>
+<pre><code>    Model has a coefficient of determination, R^2, of 0.923.
+    Because the coeficient of dertermination (R^2) of the above model is 92.3% and this rate is very high. So, I consider this model to have successfully captured the variation of the target variable.</code></pre>
 
 </div>
 </div>
@@ -13270,9 +13351,11 @@ rkJggg==
 <p><strong>Answer: </strong></p>
 
 <pre><code>I chose the graph with max_depth = 3.
-The training curve decreases relative to the position where the score from 1 to 0.8
-The test curve increase relative to the position where the score from 0 to 0.8
-Yes, there are many good training points for the model, we must change max_depth to find that point.</code></pre>
+The training curve decreases relative to the position where the score from 1 to 0.8.
+The test curve increase relative to the position where the score from 0 to 0.8.
+The training curve and test curve are converging at 0.8.
+
+Training points up to 300 will benefit  for the model. According to the model, the training point is less than 300, the accuracy will increase very clearly, but when more than 300, the accuracy increase but increase negligible.</code></pre>
 
 </div>
 </div>
@@ -13739,10 +13822,10 @@ TkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-
-<pre><code>When the model is trained with a maximum depth of 1, the model suffer from high variance. You can continue to feed it
-more and more data, and it still has high error rates even in the training set.
- When the model is trained with a maximum depth of 10, the model suffer from high bias.</code></pre>
+<p>When the maximum depth is setted to one, it's easily noticed a low variance and suffering from high bias caused by the low complexity of the model.</p>
+<p>When the depth is 10 there are high variance, but the bias still low.</p>
+<p>The visual cues that allow us to notice that the model is suffering from low variance and high bias when the depth is low (max_depth = 1) are both curves next to each other, meaning that there's a small variability from one to another on that point and the low score which means that the model is underfitting(high bias), in other words, the model cannot capture the underlying trend of the data, in most cases because the model is too simple.</p>
+<p>When the depth is higher (max_depth = 10) it's easily noticed that the curves are very distant from each other which means high variance and low bias due the high complexity of the model. In this case, the model is overfitting(high variance), in other words, the model is so much complex and it's memorizing the data it has seen before that's unable to generalize from new/unseen data.</p>
 
 </div>
 </div>
@@ -13763,8 +13846,8 @@ more and more data, and it still has high error rates even in the training set.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>The maximum depth I think results in a model that best generalizes to unseen data is grater than 10.
- Because according to the chart above I see the Training score and Validation score as far apart when max_depth increase.</p>
+<p>I believe a maximum depth of 4 is best for the model. In the graph above, accuracy increases as the maximum depth is 4, but when the maximum depth is greater than 4 the accuracy decreases.
+So, I chose a maximum depth of 4 with an accuracy of nearly 0.76</p>
 
 </div>
 </div>
@@ -13819,8 +13902,8 @@ With regard to when it is applicable, I think that the answer this project wants
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>KFold divides all the samples in k groups of samples, called folds (if k = n, this is equivalent to the Leave One Out strategy), of equal sizes (if possible).</p>
-<p>K-Fold Cross Validation is used to validate your model through generating different combinations of the data you already have.</p>
+<p>The K-fold cross-validation consists in a technique to evaluate the accuracy of the desired model, the k-fold techinique set that we split our trainset in K equal parts and reserve one of them for data validation at every iteration. The reserved validation part of k-fold keep walking ahead until the iteration has done and a mean is computed from the values of each iteration. By doing that the k-fold method used all our data for training and testing, which is nice because we don't loose anything in the process, maximizing the train and test.</p>
+<p>The cross-validation provides an accurate way to measure the performance of the models that are trained along of the GridSearch algorithm process. Providing a reliable measure to pick the best classifier for those parameters.</p>
 
 </div>
 </div>
@@ -13874,7 +13957,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
     <span class="k">print</span><span class="p">(</span><span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a decision tree regressor object</span>
-    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
   
@@ -13973,7 +14056,9 @@ Parameter &#39;max_depth&#39; is 4 for the optimal model.
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 
-<pre><code>Parameter 'max_depth' is 4 for the optimal model.</code></pre>
+<pre><code>Parameter 'max_depth' is 4 for the optimal model.
+
+The maximum depth of 4 results is equal to the predicted result in question 6.</code></pre>
 
 </div>
 </div>
@@ -14067,7 +14152,12 @@ Predicted selling price for Client 3&#39;s home: $946,633.33
 
 - Predicted selling price for Client 2's home: $230,622.00
 
-- Predicted selling price for Client 3's home: $946,633.33</code></pre>
+- Predicted selling price for Client 3's home: $946,633.33
+
+Yes, considering the social condition(poverty level) of the neighborhood and the number of rooms and student-teacher
+ratio the prices are quite reasonable for those houses. We can see that the minimum price in our data was $105,000.00, 
+</code></pre>
+<p>the maximum price was $1,024,800.00 and the mean price was $454,342.94, which is very close to the values that the model have been predicted for the houses.</p>
 
 </div>
 </div>
@@ -14154,6 +14244,7 @@ Range in prices: $73,357.39
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
+<li>This construction model should not be used in the real world. Because this data is very different from the present. There are more impacts now than in 1978.</li>
 <li>The features present in the data sufficient can't describe a home.</li>
 <li>The model robust is enough to make consistent predictions.</li>
 <li>The data collected in an urban city like Boston can't be applicable in a rural city.</li>
